@@ -85,16 +85,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-3">
-            <div class="card" >
-                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?water" alt="Card image">
-                    <div class="card-body">
-                        <a href="" class="text-decoration-none text-dark">
-                            <h5 class="card-title">Water</h5>
-                        </a>
-                </div>
-            </div>
-        </div>
     </div>
     
 </div>
