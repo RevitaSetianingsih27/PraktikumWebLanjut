@@ -43,6 +43,8 @@ $routes->setAutoRoute(true);
 //	echo view('layout/footer');
 //});
 $routes->get('/admin', 'Templating::index');
+$routes->get('/register', 'T_register::index');
+$routes->post('/saveRegister', 'T_register::saveRegister');
 $routes->get('/posts', 'PostController::index');
 
 $routes->get('/about', function(){

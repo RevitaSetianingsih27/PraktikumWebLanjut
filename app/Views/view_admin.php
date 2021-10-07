@@ -1,5 +1,6 @@
 <?= $this->extend('template'); ?>
 
+<body class="hold-transition sidebar-mini layout-fixed">
 <?= $this->section('content'); ?>
 <div class="wrapper">
 
