@@ -61,7 +61,7 @@ $routes->get('/about', function(){
 $routes->get('/admin', 'Templating::index');
 $routes->get('/admin/posts', 'AdminPostController::index');
 $routes->get('/admin/posts/create', 'AdminPostController::create');
-$routes->post('/admin/posts/create', 'AdminPostController::store');
+$routes->post('/admin/posts/store', 'AdminPostController::store');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
