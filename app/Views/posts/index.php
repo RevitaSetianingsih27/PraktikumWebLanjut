@@ -229,13 +229,19 @@
 
     <!-- /.Main-content -->
     <div class="container">
-      <?php
-        if(session()->getFlashdata('pesan'))
-        {
-          echo "<h4>".session()->getFlashdata('pesan')."</h4>";
-        }
-        ?>
-        <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus">Tambah Data</i></a>
+      <?php if(session()->getFlashdata('pesan')) : ?>
+        <div class="alert text-danger" role="alert">
+          <strong><h5><?= session()->getFlashdata('pesan'); ?></h5></strong>
+        </div>
+        <script>
+          window.setTimeout(function() {
+            $(".alert").fadeTo(300, 0).slideUp(300, function(){
+              $(this).remove(); 
+            });
+          }, 3000);
+        </script>
+      <?php endif; ?>
+      <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus">Tambah Data</i></a>  
         <div class="card mt-3">
           <div class="card-header">
             Daftar Postingan

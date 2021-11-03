@@ -241,7 +241,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="judul">Judul Postingan</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" value="<?= old('judul'); ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" autofocus value="<?= old('judul'); ?>">
                                 <?php if($validation->hasError('judul')) : ?>
                                 <div class="invalid-feedback">
                                   <?= $validation->getError('judul'); ?>
@@ -279,7 +279,7 @@
                         <div class="col-md-8">
                             <label for="deskripsi">Deskripsi Postingan</label>
                             <br>
-                            <textarea name="deskripsi" id="deskripsi" class="form-control <?= ($validation->hasError('author')) ? 'is-invalid' : ''; ?>" value="<?= old('deskripsi'); ?>"></textarea>
+                            <textarea name="deskripsi" id="deskripsi" class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" value="<?= old('deskripsi'); ?>"></textarea>
                             <?php if($validation->hasError('deskripsi')) : ?>
                                 <div class="invalid-feedback">
                                   <?= $validation->getError('deskripsi'); ?>

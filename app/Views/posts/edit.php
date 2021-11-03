@@ -241,7 +241,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="judul">Judul Postingan</label>
-                                <input type="text" class="form-control" id="judul" name="judul" value="<?= $post['judul']; ?>">
+                                <input type="text" class="form-control" id="judul" name="judul" autofocus value="<?= $post['judul']; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="slug">Slug</label>
