@@ -229,51 +229,44 @@
 
     <!-- /.Main-content -->
     <div class="container">
-      <?php
-        if(session()->getFlashdata('pesan'))
-        {
-          echo "<h4>".session()->getFlashdata('pesan')."</h4>";
-        }
-        ?>
-        <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus">Tambah Data</i></a>
-        <div class="card mt-3">
+        <div class="card">
           <div class="card-header">
-            Daftar Postingan
-          </div>
-          <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-striped text-center">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Judul</th>
-                  <th scope="col">Slug</th>
-                  <th scope="col">Kategori</th>
-                  <th scope="col">Author</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach($posts as $i => $post) : ?>
-                <tr>
-                  <th scope="row"><?= $i + 1; ?> </th>
-                  <td><?= $post['judul']; ?></td>
-                  <td><?= $post['slug']; ?></td>
-                  <td><?= $post['kategori']; ?></td>
-                  <td><?= $post['author']; ?></td>
-                  <td align-middle>
-                    <a href="<?= ("/admin/posts/edit/".$post['post_id']); ?>" class="btn btn-warning"><i class="fas fa-edit"></i>Edit</a>
-                    <form action="/admin/posts/<?= $post['post_id']; ?>" method="POST" class="d-inline">
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?');"><i class="fas fa-trash"></i>Delete</button>
-                    </form>
-                  </td>
-                </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-          </div>
-          </div>
+            <h4>Form Edit Posts
+            <a href="/admin/posts" class="btn btn-danger float-right">BACK</a>
+            </h4>
+            </div>
+            <div class="card-body">
+                <form action="<?= base_url('admin/posts/update/'.$post['post_id']); ?>" method="POST">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="judul">Judul Postingan</label>
+                                <input type="text" class="form-control" id="judul" name="judul" value="<?= $post['judul']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="slug">Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="<?= $post['slug']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Kategori Postingan</label>
+                                <input type="text" class="form-control" id="kategori" name="kategori" value="<?= $post['kategori']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="author">Author</label>
+                                <input type="text" class="form-control" id="author" name="author" value="<?= $post['author']; ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="deskripsi">Deskripsi Postingan</label>
+                            <br>
+                            <textarea name="deskripsi" id="deskripsi" class="form-control" value="<?= $post['deskripsi']; ?>"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane">Update</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- isi disini -->
@@ -298,4 +291,10 @@
 </div>
 <!-- ./wrapper -->
 
+<?= $this->endSection(); ?>
+
+<?php $this->section('myscript'); ?>
+<script>
+    $('#deskripsi').summernote()
+</script>
 <?= $this->endSection(); ?>

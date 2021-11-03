@@ -160,10 +160,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/assets/images/repita.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Revitaa</a>
         </div>
       </div>
 
@@ -230,9 +230,11 @@
     <!-- /.Main-content -->
     <div class="container">
         <div class="card">
-            <div class="card-header">
-            Form Tambah Posts
-            </div>
+          <div class="card-header">
+            <h4>Form Tambah Posts
+            <a href="/admin/posts" class="btn btn-danger float-right">BACK</a>
+            </h4>
+          </div>
             <div class="card-body">
                 <form action="/admin/posts/store" method="POST">
                     <div class="row">
